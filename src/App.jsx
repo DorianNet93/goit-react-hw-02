@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Description from './components/Description/Description';
-import Feedback from './Components/Feedback/Feedback';
+import Feedback from './сomponents/Feedback/Feedback';
 import './App.css';
 
 const App = () => {
