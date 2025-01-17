@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Description from './components/Description/Description';
-import Feedback from './components/Feedback/Feedback';
+
 import './App.css';
+import Feedback from './Components/Feedback/Feedback';
 
 const App = () => {
   const [feedback, setFeedback] = useState(() => {
