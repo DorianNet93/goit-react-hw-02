@@ -10,17 +10,18 @@ const Feedback = ({ feedback, onLeaveFeedback, onResetFeedback, total, positiveP
         options={Object.keys(feedback)}
         onLeaveFeedback={onLeaveFeedback}
         onResetFeedback={onResetFeedback}
-        showReset={total > 0} 
+        showReset={total > 0}
       />
-      <Statistics
-        feedback={feedback}
-        total={total}
-        positivePercentage={positivePercentage}
-      />
+      {total > 0 && (
+        <Statistics
+          feedback={feedback}
+          total={total}
+          positivePercentage={positivePercentage}
+        />
+      )}
     </div>
   );
 };
 
-export default Feedback;
-
+export default Feedback
 
