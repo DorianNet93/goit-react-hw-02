@@ -1,17 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import Feedback from './components/Feedback/Feedback';
+import Description from './components/Description/Description';
+import Feedback from './Components/Feedback/Feedback';
 import './App.css';
 
 const App = () => {
   const [feedback, setFeedback] = useState(() => {
     const savedFeedback = localStorage.getItem('feedback');
-    return savedFeedback 
-      ? JSON.parse(savedFeedback) 
-      : {
-          good: 0,
-          neutral: 0,
-          bad: 0
-        };
+    return savedFeedback ? JSON.parse(savedFeedback) : { good: 0, neutral: 0, bad: 0 };
   });
 
   useEffect(() => {
@@ -31,16 +26,14 @@ const App = () => {
     }));
   };
 
-
   const onResetFeedback = () => {
     setFeedback({ good: 0, neutral: 0, bad: 0 });
-    localStorage.removeItem('feedback');
   };
 
   return (
     <div className="app">
       <h1>Sip Happens Café</h1>
-      <p>Please leave your feedback about our service by selecting one of the options below.</p>
+      <Description />
       <Feedback
         feedback={feedback}
         onLeaveFeedback={onLeaveFeedback}
@@ -48,8 +41,10 @@ const App = () => {
         total={totalFeedback}
         positivePercentage={positiveFeedbackPercentage}
       />
+      {totalFeedback === 0 && <Notification message="No feedback given yet." />}
     </div>
   );
 };
 
 export default App;
+

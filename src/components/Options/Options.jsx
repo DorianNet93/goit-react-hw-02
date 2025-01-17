@@ -13,9 +13,11 @@ const Options = ({ options, onLeaveFeedback, onResetFeedback, showReset }) => {
           {option.charAt(0).toUpperCase() + option.slice(1)}
         </button>
       ))}
-
       {showReset && (
-        <button className={`${styles.button} ${styles.resetButton}`} onClick={onResetFeedback}>
+        <button
+          className={`${styles.button} ${styles.resetButton}`}
+          onClick={onResetFeedback}
+        >
           Reset
         </button>
       )}
@@ -24,5 +26,7 @@ const Options = ({ options, onLeaveFeedback, onResetFeedback, showReset }) => {
 };
 
 export default Options;
+
+
 
 

@@ -10,20 +10,17 @@ const Feedback = ({ feedback, onLeaveFeedback, onResetFeedback, total, positiveP
         options={Object.keys(feedback)}
         onLeaveFeedback={onLeaveFeedback}
         onResetFeedback={onResetFeedback}
-        showReset={total > 0}
+        showReset={total > 0} 
       />
-      
-      {total > 0 ? (
-        <Statistics
-          feedback={feedback}
-          total={total}
-          positivePercentage={positivePercentage}
-        />
-      ) : (
-        <p className={styles.message}>No feedback given yet.</p>
-      )}
+      <Statistics
+        feedback={feedback}
+        total={total}
+        positivePercentage={positivePercentage}
+      />
     </div>
   );
 };
 
 export default Feedback;
+
+

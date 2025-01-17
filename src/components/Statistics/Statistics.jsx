@@ -15,3 +15,6 @@ const Statistics = ({ feedback, total, positivePercentage }) => {
 };
 
 export default Statistics;
+
+
+
