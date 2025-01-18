@@ -1,27 +1,19 @@
-import React from 'react';
-import Options from '../Options/Options';
-import Statistics from '../Statistics/Statistics';
-import styles from './Feedback.module.css';
+import React from "react";
 
-const Feedback = ({ feedback, onLeaveFeedback, onResetFeedback, total, positivePercentage }) => {
+const Feedback = ({ feedback, total, positivePercentage }) => {
   return (
-    <div className={styles.feedback}>
-      <Options
-        options={Object.keys(feedback)}
-        onLeaveFeedback={onLeaveFeedback}
-        onResetFeedback={onResetFeedback}
-        showReset={total > 0}
-      />
-      {total > 0 && (
-        <Statistics
-          feedback={feedback}
-          total={total}
-          positivePercentage={positivePercentage}
-        />
-      )}
+    <div>
+      <h2>Feedback Statistics</h2>
+      <p>Good: {feedback.good}</p>
+      <p>Neutral: {feedback.neutral}</p>
+      <p>Bad: {feedback.bad}</p>
+      <p>Total Feedback: {total}</p>
+      <p>Positive Feedback: {positivePercentage}%</p>
     </div>
   );
 };
 
-export default Feedback
+export default Feedback;
+
+
 
