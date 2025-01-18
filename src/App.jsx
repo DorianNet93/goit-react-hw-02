@@ -36,11 +36,11 @@ const App = () => {
 
   return (
     <div className="app">
-      <h1>Sip Happens Café</h1>
       <Description />
 
       <Options
         options={['good', 'neutral', 'bad']}
+        totalFeedback={totalFeedback}
         onLeaveFeedback={onLeaveFeedback}
         onResetFeedback={onResetFeedback}
       />
@@ -50,6 +50,7 @@ const App = () => {
           feedback={feedback}
           total={totalFeedback}
           positivePercentage={positiveFeedbackPercentage}
+          totalFeedback={totalFeedback}
         />
       ) : (
         <Notification message="No feedback given yet." />
@@ -59,7 +60,6 @@ const App = () => {
 };
 
 export default App;
-
 
 
 
